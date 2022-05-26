@@ -1,22 +1,17 @@
 package com.example.dotaheroes.view.fragments
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.dotaheroes.api.RetrofitHelper
-import com.example.dotaheroes.api.requests.HeroApiClient
 import com.example.dotaheroes.databinding.FragmentHeroesListBinding
 import com.example.dotaheroes.view.HeroesViewModel
 import com.example.dotaheroes.view.adapters.HeroListAdapter
-import kotlinx.coroutines.GlobalScope
 
 
 class HeroesListFragment : Fragment() {
@@ -35,12 +30,30 @@ class HeroesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
+        setupViewEvents()
         heroViewModel.getHeroes {
             heroesListBinding.shimmerLayout.isVisible = false
             heroesListBinding.heroesRecyclerView.visibility = View.VISIBLE
             heroesAdapter.setData(it)
         }
 
+    }
+
+    private fun setupViewEvents() {
+        heroesListBinding.searchViewHero.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    heroesAdapter.filter.filter(query)
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    heroesAdapter.filter.filter(newText)
+                    return false
+                }
+
+            }
+        )
     }
 
     private fun setRecyclerView() {
@@ -53,9 +66,5 @@ class HeroesListFragment : Fragment() {
             //layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             layoutManager = GridLayoutManager(requireContext(), 2)
         }
-    }
-
-    companion object {
-
     }
 }
