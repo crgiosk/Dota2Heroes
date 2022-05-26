@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="searchViewTextColorHint" format="reference"/>
+    <attr name="searchViewTextColorPrimary" format="reference"/>
+    <attr name="searchViewTextColorSecondary" format="reference"/>
+    <attr name="searchViewBackgroundTint" format="reference"/>
+    <attr name="searchViewBackground" format="reference"/>
+    <attr name="searchViewBackgroundSecondary" format="reference"/>
+</resources>

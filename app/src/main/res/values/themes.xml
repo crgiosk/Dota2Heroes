@@ -12,5 +12,24 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!-- Style Search -->
+        <item name="searchViewTextColorPrimary">@color/gray_ADADAD</item>
+        <item name="searchViewTextColorSecondary">@color/gray_ADADAD</item>
+        <item name="searchViewBackgroundTint">@color/white</item>
+        <item name="searchViewTextColorHint">@color/gray_ADADAD</item>
+        <item name="searchViewBackground">@color/blue_DAEEF7</item>
+        <item name="searchViewBackgroundSecondary">@color/gray_EDF2F4</item>
+
+    </style>
+
+    //searchviewStyle
+    <style name="searchViewTheme" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorPrimary">?attr/searchViewTextColorPrimary</item>
+        <item name="iconifiedByDefault">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:textColorSecondary">?attr/searchViewTextColorSecondary</item>
+        <item name="android:backgroundTint">?attr/searchViewBackgroundTint</item>
+        <item name="android:textColorHint">?attr/searchViewTextColorHint</item>
     </style>
 </resources>
