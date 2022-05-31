@@ -9,5 +9,18 @@
         android:id="@+id/heroesList"
         android:name="com.example.dotaheroes.view.fragments.HeroesListFragment"
         android:label="fragment_heroes_list"
-        tools:layout="@layout/fragment_heroes_list" />
+        tools:layout="@layout/fragment_heroes_list">
+        <action
+            android:id="@+id/action_heroesList_to_detailHeroFragment"
+            app:destination="@id/detailHeroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHeroFragment"
+        android:name="com.example.dotaheroes.view.fragments.DetailHeroFragment"
+        android:label="fragment_detail_hero"
+        tools:layout="@layout/fragment_detail_hero">
+        <!--<argument
+            android:name="hero"
+            app:argType="com.example.dotaheroes.api.models.HeroApiResponse" />-->
+    </fragment>
 </navigation>

@@ -2,9 +2,12 @@
     <string name="app_name">DotaHeroes</string>
 
     //hints
-
     <string name="query_hint_search_view">Search</string>
 
     //image descriptions
     <string name="hero_image_description">Hero image</string>
+
+    //titles
+    <string name="games_played">Games played</string>
+    <string name="games_wins">Games Wins</string>
 </resources>

@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/drawable/background_border_search_view.xml" value="0.1655" />
         <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/activity_main.xml" value="0.135546875" />
+        <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/fragment_detail_hero.xml" value="0.33" />
+        <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/fragment_detail_hero_loading.xml" value="0.25" />
         <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/fragment_heroes_list.xml" value="0.2" />
         <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/item_hero_list.xml" value="0.19" />
         <entry key="..\:/Users/sergio.noriega/AndroidStudioProjects/DotaHeroes/app/src/main/res/layout/item_hero_list_loading.xml" value="0.210546875" />

@@ -2,7 +2,7 @@ package com.example.dotaheroes.api.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Hero(
+data class HeroApiResponse(
 
     @SerializedName("id")
     val id: Int,

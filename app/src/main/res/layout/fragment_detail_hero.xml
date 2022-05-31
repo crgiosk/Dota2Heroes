@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    tools:context=".view.fragments.DetailHeroFragment">
+
+    <include
+        android:id="@+id/includeLoading"
+        layout="@layout/fragment_detail_hero_loading"
+        tools:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/heroImageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/heroImageView"
+            app:layout_constraintTop_toBottomOf="@+id/heroImageView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/nameAttributeHeroTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/difficultHero"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Dark Willow" />
+
+                <TextView
+                    android:id="@+id/attackType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/rolesHeroTextView"
+                    app:layout_constraintStart_toStartOf="@+id/rolesHeroTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/rolesHeroTextView"
+                    tools:text="Intelligence" />
+
+                <TextView
+                    android:id="@+id/rolesHeroTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/difficultHero"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nameAttributeHeroTextView"
+                    tools:text="Support" />
+
+                <RatingBar
+                    android:id="@+id/difficultHero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:isIndicator="true"
+                    android:numStars="3"
+                    android:progressBackgroundTint="@color/white"
+                    android:rating="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/nameAttributeHeroTextView"
+                    app:layout_constraintTop_toTopOf="@+id/nameAttributeHeroTextView"
+                    tools:text="Dark Willow" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/gamesPlayedLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/gamesWins"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/games_played" />
+
+                <TextView
+                    android:id="@+id/gamesPlayedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="999" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gamesWins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/gamesPlayedLayout"
+                app:layout_constraintTop_toTopOf="@+id/gamesPlayedLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/games_wins" />
+
+                <TextView
+                    android:id="@+id/gamesWinsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="666" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

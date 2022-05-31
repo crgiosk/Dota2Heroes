@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.dotaheroes.R
 import com.example.dotaheroes.databinding.FragmentHeroesListBinding
-import com.example.dotaheroes.view.HeroesViewModel
+import com.example.dotaheroes.view.HeroViewModel
 import com.example.dotaheroes.view.adapters.HeroListAdapter
 
 
@@ -18,7 +21,7 @@ class HeroesListFragment : Fragment() {
 
     private lateinit var heroesListBinding: FragmentHeroesListBinding
 
-    private val heroViewModel: HeroesViewModel by viewModels()
+    private val heroViewModel: HeroViewModel by activityViewModels()
 
     private lateinit var heroesAdapter: HeroListAdapter
 
@@ -58,7 +61,8 @@ class HeroesListFragment : Fragment() {
 
     private fun setRecyclerView() {
          heroesAdapter = HeroListAdapter {
-
+             heroViewModel.heroApiResponse = it
+             findNavController().navigate(R.id.action_heroesList_to_detailHeroFragment)
         }
 
         heroesListBinding.heroesRecyclerView.run {
